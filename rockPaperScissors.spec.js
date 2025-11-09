@@ -9,8 +9,15 @@ describe('rockPaperScissors', () => {
 });
 
 describe('rockPaperScissors', () => {
-    test.skip('human choices should return valid option', () => {
+    test('human choices should return valid option', () => {
         const result = rockPaperScissors.getHumanChoice("paper");
         expect(validChoices).toContain(result);
+    });
+});
+
+describe('rockPaperScissors', () => {
+    test('potato is not a valid option', () => {
+        const result = rockPaperScissors.getHumanChoice("potato");
+        expect(validChoices).not.toContain(result);
     });
 });

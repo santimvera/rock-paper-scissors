@@ -7,10 +7,8 @@ function getComputerChoice() {
     return result;
 }
 
-function getHumanChoice() {
-    let result;
-    result = "rock";
-    return result;
+function getHumanChoice(aChoice) {
+    return aChoice;
 }
 
 
