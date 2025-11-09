@@ -1,0 +1,23 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "The Rock Paper Scissors game",
+  "main": "rockPaperScissors.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santimvera/rock-paper-scissors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santimvera/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/santimvera/rock-paper-scissors#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
