@@ -10,14 +10,18 @@ describe('rockPaperScissors', () => {
 
 describe('rockPaperScissors', () => {
     test('human choices should return valid option', () => {
-        const result = rockPaperScissors.getHumanChoice("paper");
+        global.prompt = jest.fn(() => 'Paper');
+        const result = rockPaperScissors.getHumanChoice();
         expect(validChoices).toContain(result);
     });
 });
 
 describe('rockPaperScissors', () => {
     test('potato is not a valid option', () => {
-        const result = rockPaperScissors.getHumanChoice("potato");
+        global.prompt = jest.fn(() => 'potato');
+        const result = rockPaperScissors.getHumanChoice();
         expect(validChoices).not.toContain(result);
     });
+
+
 });

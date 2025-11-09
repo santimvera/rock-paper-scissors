@@ -1,4 +1,7 @@
 const choices = ['rock', 'paper', 'scissors'];
+let humanScore = 0;
+let computerScore = 0;
+
 
 function getComputerChoice() {
     let result;
@@ -7,8 +10,8 @@ function getComputerChoice() {
     return result;
 }
 
-function getHumanChoice(aChoice) {
-    return aChoice;
+function getHumanChoice() {
+    return prompt("Enter rock, paper, or scissors:").toLowerCase();
 }
 
 
