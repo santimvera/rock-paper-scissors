@@ -63,5 +63,21 @@ describe('playRound', () => {
     test('computer wins with paper vs rock', () => {
         expect(rockPaperScissors.playRound('rock', 'paper')).toBe("You lose! paper beats rock.");
     });
+
 });
 
+describe('playGame', () => {
+    test('play the game', () => {
+        jest.spyOn(global, 'prompt')
+            .mockImplementationOnce(() => 'rock')
+            .mockImplementationOnce(() => 'rock')
+            .mockImplementationOnce(() => 'rock');
+
+        jest.spyOn(rockPaperScissors, 'getComputerChoice')
+            .mockImplementationOnce(() => 'paper')
+            .mockImplementationOnce(() => 'paper')
+            .mockImplementationOnce(() => 'paper');
+
+        expect(rockPaperScissors.playGame()).toBe("The computer won the game");
+    });
+});

@@ -29,10 +29,24 @@ function playRound(humanChoice, computerChoice) {
         return `You lose! ${computerChoice} beats ${humanChoice}.`;
     }
 }
+function playGame() {
+    humanScore = 0;
+    computerScore = 0;
 
+    while (humanScore < 3 && computerScore < 3) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+
+    if (humanScore === 3) {
+        return "The human won the game";
+    } else {
+        return "The computer won the game";
+    }
+}
 
 module.exports = {
     getComputerChoice,
     getHumanChoice,
-    playRound
+    playRound,
+    playGame
 };
