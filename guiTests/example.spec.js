@@ -14,12 +14,10 @@ test('UI should match the baseline screenshot', async ({ page }) => {
 });
 
 test('User clicks rock and wins against computer scissors', async ({ page }) => {
-  await page.addInitScript(() => {
-    window['getComputerChoice'] = () => "scissors";
-  });
   await page.goto(homePagePath);
-  await page.evaluate(() => window.setComputerChoiceForTest('scissors'));
+  await page.evaluate(() => {
+    window.getComputerChoice = () => 'scissors';
+  });
   await page.click('#rock');
-  await page.evaluate(() => window.clearComputerChoiceForTest());
   expect(await page.screenshot()).toMatchSnapshot('rockPaperScissors-rockWin.png');
 });

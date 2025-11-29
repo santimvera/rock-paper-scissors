@@ -2,7 +2,7 @@ const choices = ['rock', 'paper', 'scissors'];
 let humanScore = 0;
 let computerScore = 0;
 let gameButtons = document.querySelector('#gameButtons');
-let computerChoiceOverride = null;
+
 
 gameButtons.addEventListener("click", playRoundFromClick);
 
@@ -55,13 +55,7 @@ function playGame() {
     }
 }
 
-// For testing only: allow override
-window.setComputerChoiceForTest = function (choice) {
-    computerChoiceOverride = choice;
-};
-window.clearComputerChoiceForTest = function () {
-    computerChoiceOverride = null;
-};
+
 
 
 module.exports = {
