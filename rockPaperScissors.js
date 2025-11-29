@@ -10,13 +10,13 @@ function playRoundFromClick(aCallback) {
     let result = '';
     result = playRound(aCallback.target.id, getComputerChoice());
     document.getElementById('result').textContent = result;
+    document.getElementById('humanScore').textContent = 'Human score: ' + humanScore.toString();
+    document.getElementById('computerScore').textContent = 'Computer score: ' + computerScore.toString();
 }
 
 
 function getComputerChoice() {
-    if (computerChoiceOverride) {
-        return computerChoiceOverride;
-    }
+
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
