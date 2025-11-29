@@ -1,13 +1,24 @@
 const choices = ['rock', 'paper', 'scissors'];
 let humanScore = 0;
 let computerScore = 0;
+let gameButtons = document.querySelector('#gameButtons');
+let computerChoiceOverride = null;
+
+gameButtons.addEventListener("click", playRoundFromClick);
+
+function playRoundFromClick(aCallback) {
+    let result = '';
+    result = playRound(aCallback.target.id, getComputerChoice());
+    document.getElementById('result').textContent = result;
+}
 
 
 function getComputerChoice() {
-    let result;
+    if (computerChoiceOverride) {
+        return computerChoiceOverride;
+    }
     const randomIndex = Math.floor(Math.random() * choices.length);
-    result = choices[randomIndex];
-    return result;
+    return choices[randomIndex];
 }
 
 function getHumanChoice() {
@@ -43,6 +54,15 @@ function playGame() {
         return "The computer won the game";
     }
 }
+
+// For testing only: allow override
+window.setComputerChoiceForTest = function (choice) {
+    computerChoiceOverride = choice;
+};
+window.clearComputerChoiceForTest = function () {
+    computerChoiceOverride = null;
+};
+
 
 module.exports = {
     getComputerChoice,
